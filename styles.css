@@ -1,0 +1,89 @@
+html, body {
+  margin: 0;
+}
+
+.entries-container {
+    margin: 45px 40px;
+}
+
+.header-container {
+  background: #F55A5A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 55px;
+}
+
+.header-image {
+  width: 24px;
+  margin-right: 7px;
+}
+
+.header-h1 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+}
+
+.journal-article-container {
+  display: flex;
+}
+
+/* Using so we can set the correct aspect ratio of the main image*/
+.journal-main-image-container {
+  width: 125px;
+  height: 168px;
+  overflow: hidden;
+  border-radius: 5px; /*rounded corners for the image*/
+  flex-shrink: 0; /*don't shrink and child containers (text)*/
+  margin-right: 19px;
+}
+
+.journal-main-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.journal-marker-image {
+  width: 25px;
+  /* margin-right: 7px; */
+}
+
+/* Customise the link */
+.journal-entry-container a {
+  color: #2B283A;
+  font-size: 0.7rem;
+}
+
+.journal-entry-container a:visited {
+  color: #918E9B;
+}
+
+.journal-country {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-right: 12px;
+}
+
+.journal-title {
+  margin-top: 7px;
+  margin-bottom: 17px;
+}
+
+.journal-date {
+  font-weight: bold;
+}
+
+.journal-text {
+  line-height: 1.5;
+  font-size: 0.8rem;
+  /* Using webkit-box to clamp the text - only way to do this!
+  see https://dev.to/dianale/css-typography-create-exact-heights-with-line-clamp-40e3 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* this sets the number of lines to disply */
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+
+}
