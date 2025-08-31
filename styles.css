@@ -28,6 +28,7 @@ html, body {
 
 .journal-article-container {
   display: flex;
+  margin-bottom: 20px; /* so articles are not bunched*/
 }
 
 /* Using so we can set the correct aspect ratio of the main image*/
