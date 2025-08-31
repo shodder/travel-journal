@@ -8,40 +8,15 @@ import Entry from "./components/Entry"
 // load the data straight into a JS object to use
 import journalData from "/data"
 
-
-/**
- * Challenge:
- * - import the array of data from data.js
- * - map over the array to create an <Entry /> component
- *   for every item in the data array.
- * - display the array of Entry components in place of the current
- *   hard-coded <Entry /> instance.
- */
-
+//exmaple passing in full objects
 export default function App() {
-  
   // Map the incoming data to entry jsx elements
   const journalElements = journalData.map(
     (entry) => {
       return (
         <Entry 
-          // image={
-          //     {
-          //       src: entry.img.src,
-          //       alt: entry.img.alt
-          //     }
-          //   }
-            image={entry.img} // can do this rather than above as objects match
-            country={entry.country}
-            googleMapsLink={entry.googleMapsLink}
-            title={entry.title}
-            dates={entry.dates}
-            info={entry.text}
-            // For React to track items in a list of elements
-            // each item MUST have a unique key assigned to "key" prop
-            // Need this to add/remove items fro mthe element list
-            // In this example we have IDs for this!
             key={entry.id}
+            entry={entry}
         />
       )
     }
@@ -56,6 +31,81 @@ export default function App() {
     </>
   )
 }
+
+//exmaple passing in spreading an objects
+// export default function App() {
+//   // Map the incoming data to entry jsx elements
+//   const journalElements = journalData.map(
+//     (entry) => {
+//       return (
+//         <Entry 
+//             key={entry.id}
+//             // Pass in props as a spread from the entry data
+//             // This can obscure the shape of the data in the element
+//             // being called
+//             {...entry}
+//         />
+//       )
+//     }
+//   )
+
+//   return (
+//     <>
+//       <Navbar />
+//       <main className="entries-container" >
+//         {journalElements}
+//       </main>
+//     </>
+//   )
+// }
+
+
+/**
+ * Challenge:
+ * - import the array of data from data.js
+ * - map over the array to create an <Entry /> component
+ *   for every item in the data array.
+ * - display the array of Entry components in place of the current
+ *   hard-coded <Entry /> instance.
+ */
+
+// export default function App() {
+  
+//   // Map the incoming data to entry jsx elements
+//   const journalElements = journalData.map(
+//     (entry) => {
+//       return (
+//         <Entry 
+//           // image={
+//           //     {
+//           //       src: entry.img.src,
+//           //       alt: entry.img.alt
+//           //     }
+//           //   }
+//             image={entry.img} // can do this rather than above as objects match
+//             country={entry.country}
+//             googleMapsLink={entry.googleMapsLink}
+//             title={entry.title}
+//             dates={entry.dates}
+//             info={entry.text}
+//             // For React to track items in a list of elements
+//             // each item MUST have a unique key assigned to "key" prop
+//             // Need this to add/remove items fro mthe element list
+//             // In this example we have IDs for this!
+//             key={entry.id}
+//         />
+//       )
+//     }
+//   )
+//   return (
+//     <>
+//       <Navbar />
+//       <main className="entries-container" >
+//         {journalElements}
+//       </main>
+//     </>
+//   )
+// }
 
 
 
